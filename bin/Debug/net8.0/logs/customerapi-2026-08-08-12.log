@@ -1,0 +1,166 @@
+2026-08-08 12:20:18.7562 | INFO | Microsoft.Hosting.Lifetime | Now listening on: https://localhost:7286 
+2026-08-08 12:20:18.7993 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5045 
+2026-08-08 12:20:18.9066 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down. 
+2026-08-08 12:20:18.9066 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development 
+2026-08-08 12:20:18.9066 | INFO | Microsoft.Hosting.Lifetime | Content root path: C:\Users\HP\Desktop\Learn\CustomerApi 
+2026-08-08 12:20:20.2935 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/swagger/index.html - - - 
+2026-08-08 12:20:21.0841 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/_vs/browserLink - - - 
+2026-08-08 12:20:21.0841 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/_framework/aspnetcore-browser-refresh.js - - - 
+2026-08-08 12:20:21.1011 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/swagger/index.html - 200 - text/html;charset=utf-8 853.3273ms 
+2026-08-08 12:20:21.1033 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/_framework/aspnetcore-browser-refresh.js - 200 14927 application/javascript;+charset=utf-8 19.0676ms 
+2026-08-08 12:20:21.2398 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 155.8183ms 
+2026-08-08 12:20:21.3637 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/swagger/v1/swagger.json - - - 
+2026-08-08 12:20:21.5028 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 139.1343ms 
+2026-08-08 12:20:47.7395 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/api/Customer/paged - - - 
+2026-08-08 12:20:47.7572 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'CustomerApi.Controllers.CustomerController.GetAllPaged (CustomerApi)' 
+2026-08-08 12:20:47.8285 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "GetAllPaged", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllPaged(CustomerApi.DTOs.CustomerQueryParams) on controller CustomerApi.Controllers.CustomerController (CustomerApi). 
+2026-08-08 12:20:51.0947 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (91ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Customers] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) 
+2026-08-08 12:20:51.3467 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (41ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[DeletedAt], [c].[Email], [c].[FirstName], [c].[IsDeleted], [c].[LastName], [c].[PhoneNumber], [c].[UpdatedAt]
+FROM [Customers] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [c].[CreatedAt]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY 
+2026-08-08 12:20:51.4387 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'CustomerApi.Common.PagedResponse`1[[CustomerApi.DTOs.CustomerResponseDto, CustomerApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2026-08-08 12:20:51.4854 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action CustomerApi.Controllers.CustomerController.GetAllPaged (CustomerApi) in 3640.4093ms 
+2026-08-08 12:20:51.4854 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'CustomerApi.Controllers.CustomerController.GetAllPaged (CustomerApi)' 
+2026-08-08 12:20:51.5011 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/api/Customer/paged - 200 - application/json;+charset=utf-8 3761.8671ms 
+2026-08-08 12:21:27.1733 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/api/Customer/paged?PageNumber=1&PageSize=1 - - - 
+2026-08-08 12:21:27.1733 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'CustomerApi.Controllers.CustomerController.GetAllPaged (CustomerApi)' 
+2026-08-08 12:21:27.1733 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "GetAllPaged", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllPaged(CustomerApi.DTOs.CustomerQueryParams) on controller CustomerApi.Controllers.CustomerController (CustomerApi). 
+2026-08-08 12:21:27.2393 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Customers] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) 
+2026-08-08 12:21:27.2485 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[DeletedAt], [c].[Email], [c].[FirstName], [c].[IsDeleted], [c].[LastName], [c].[PhoneNumber], [c].[UpdatedAt]
+FROM [Customers] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [c].[CreatedAt]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY 
+2026-08-08 12:21:27.2485 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'CustomerApi.Common.PagedResponse`1[[CustomerApi.DTOs.CustomerResponseDto, CustomerApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2026-08-08 12:21:27.2485 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action CustomerApi.Controllers.CustomerController.GetAllPaged (CustomerApi) in 70.2025ms 
+2026-08-08 12:21:27.2485 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'CustomerApi.Controllers.CustomerController.GetAllPaged (CustomerApi)' 
+2026-08-08 12:21:27.2485 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/api/Customer/paged?PageNumber=1&PageSize=1 - 200 - application/json;+charset=utf-8 77.7023ms 
+2026-08-08 12:21:40.1299 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/api/Customer/paged?PageNumber=2&PageSize=1 - - - 
+2026-08-08 12:21:40.1299 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'CustomerApi.Controllers.CustomerController.GetAllPaged (CustomerApi)' 
+2026-08-08 12:21:40.1299 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "GetAllPaged", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllPaged(CustomerApi.DTOs.CustomerQueryParams) on controller CustomerApi.Controllers.CustomerController (CustomerApi). 
+2026-08-08 12:21:40.2438 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Customers] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) 
+2026-08-08 12:21:40.2681 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[DeletedAt], [c].[Email], [c].[FirstName], [c].[IsDeleted], [c].[LastName], [c].[PhoneNumber], [c].[UpdatedAt]
+FROM [Customers] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [c].[CreatedAt]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY 
+2026-08-08 12:21:40.2681 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'CustomerApi.Common.PagedResponse`1[[CustomerApi.DTOs.CustomerResponseDto, CustomerApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2026-08-08 12:21:40.2681 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action CustomerApi.Controllers.CustomerController.GetAllPaged (CustomerApi) in 137.5735ms 
+2026-08-08 12:21:40.2681 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'CustomerApi.Controllers.CustomerController.GetAllPaged (CustomerApi)' 
+2026-08-08 12:21:40.2681 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/api/Customer/paged?PageNumber=2&PageSize=1 - 200 - application/json;+charset=utf-8 140.9855ms 
+2026-08-08 12:21:51.6993 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/api/Customer/paged?PageNumber=2&PageSize=2 - - - 
+2026-08-08 12:21:51.6993 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'CustomerApi.Controllers.CustomerController.GetAllPaged (CustomerApi)' 
+2026-08-08 12:21:51.6993 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "GetAllPaged", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllPaged(CustomerApi.DTOs.CustomerQueryParams) on controller CustomerApi.Controllers.CustomerController (CustomerApi). 
+2026-08-08 12:21:51.6993 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Customers] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) 
+2026-08-08 12:21:51.7211 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[DeletedAt], [c].[Email], [c].[FirstName], [c].[IsDeleted], [c].[LastName], [c].[PhoneNumber], [c].[UpdatedAt]
+FROM [Customers] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [c].[CreatedAt]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY 
+2026-08-08 12:21:51.7211 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'CustomerApi.Common.PagedResponse`1[[CustomerApi.DTOs.CustomerResponseDto, CustomerApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2026-08-08 12:21:51.7211 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action CustomerApi.Controllers.CustomerController.GetAllPaged (CustomerApi) in 21.1544ms 
+2026-08-08 12:21:51.7211 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'CustomerApi.Controllers.CustomerController.GetAllPaged (CustomerApi)' 
+2026-08-08 12:21:51.7211 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/api/Customer/paged?PageNumber=2&PageSize=2 - 200 - application/json;+charset=utf-8 24.8927ms 
+2026-08-08 12:22:02.6896 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/api/Customer/paged?PageNumber=2&PageSize=4 - - - 
+2026-08-08 12:22:02.6896 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'CustomerApi.Controllers.CustomerController.GetAllPaged (CustomerApi)' 
+2026-08-08 12:22:02.6896 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "GetAllPaged", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllPaged(CustomerApi.DTOs.CustomerQueryParams) on controller CustomerApi.Controllers.CustomerController (CustomerApi). 
+2026-08-08 12:22:02.7232 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Customers] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) 
+2026-08-08 12:22:02.7288 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[DeletedAt], [c].[Email], [c].[FirstName], [c].[IsDeleted], [c].[LastName], [c].[PhoneNumber], [c].[UpdatedAt]
+FROM [Customers] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [c].[CreatedAt]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY 
+2026-08-08 12:22:02.7288 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'CustomerApi.Common.PagedResponse`1[[CustomerApi.DTOs.CustomerResponseDto, CustomerApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2026-08-08 12:22:02.7288 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action CustomerApi.Controllers.CustomerController.GetAllPaged (CustomerApi) in 25.2869ms 
+2026-08-08 12:22:02.7288 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'CustomerApi.Controllers.CustomerController.GetAllPaged (CustomerApi)' 
+2026-08-08 12:22:02.7288 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/api/Customer/paged?PageNumber=2&PageSize=4 - 200 - application/json;+charset=utf-8 41.9850ms 
+2026-08-08 12:22:40.5212 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/api/Customer/paged?PageNumber=1&PageSize=2 - - - 
+2026-08-08 12:22:40.5255 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'CustomerApi.Controllers.CustomerController.GetAllPaged (CustomerApi)' 
+2026-08-08 12:22:40.5255 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "GetAllPaged", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllPaged(CustomerApi.DTOs.CustomerQueryParams) on controller CustomerApi.Controllers.CustomerController (CustomerApi). 
+2026-08-08 12:22:40.5255 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Customers] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) 
+2026-08-08 12:22:40.5467 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[DeletedAt], [c].[Email], [c].[FirstName], [c].[IsDeleted], [c].[LastName], [c].[PhoneNumber], [c].[UpdatedAt]
+FROM [Customers] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [c].[CreatedAt]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY 
+2026-08-08 12:22:40.5467 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'CustomerApi.Common.PagedResponse`1[[CustomerApi.DTOs.CustomerResponseDto, CustomerApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2026-08-08 12:22:40.5467 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action CustomerApi.Controllers.CustomerController.GetAllPaged (CustomerApi) in 21.0098ms 
+2026-08-08 12:22:40.5467 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'CustomerApi.Controllers.CustomerController.GetAllPaged (CustomerApi)' 
+2026-08-08 12:22:40.5467 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/api/Customer/paged?PageNumber=1&PageSize=2 - 200 - application/json;+charset=utf-8 28.3689ms 
+2026-08-08 12:43:36.0867 | INFO | Microsoft.Hosting.Lifetime | Now listening on: https://localhost:7286 
+2026-08-08 12:43:36.1417 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5045 
+2026-08-08 12:43:36.2494 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down. 
+2026-08-08 12:43:36.2494 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development 
+2026-08-08 12:43:36.2494 | INFO | Microsoft.Hosting.Lifetime | Content root path: C:\Users\HP\Desktop\Learn\CustomerApi 
+2026-08-08 12:43:37.6656 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/swagger/index.html - - - 
+2026-08-08 12:43:38.4481 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/_vs/browserLink - - - 
+2026-08-08 12:43:38.4481 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/_framework/aspnetcore-browser-refresh.js - - - 
+2026-08-08 12:43:38.4745 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/_framework/aspnetcore-browser-refresh.js - 200 14927 application/javascript;+charset=utf-8 22.9287ms 
+2026-08-08 12:43:38.4745 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/swagger/index.html - 200 - text/html;charset=utf-8 844.1470ms 
+2026-08-08 12:43:38.6032 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 155.3148ms 
+2026-08-08 12:43:38.7068 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/swagger/v1/swagger.json - - - 
+2026-08-08 12:43:38.7694 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 62.4523ms 
+2026-08-08 12:44:32.5691 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 POST https://localhost:7286/api/Customer/bulk - application/json 507 
+2026-08-08 12:44:32.6000 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'CustomerApi.Controllers.CustomerController.CreateMany (CustomerApi)' 
+2026-08-08 12:44:32.6504 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "CreateMany", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateMany(CustomerApi.DTOs.BulkCreateCustomerDto) on controller CustomerApi.Controllers.CustomerController (CustomerApi). 
+2026-08-08 12:44:35.2598 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (127ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (DbType = DateTime2), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = DateTime2), @p16='?' (DbType = DateTime2), @p17='?' (DbType = DateTime2), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000), @p22='?' (Size = 4000), @p23='?' (DbType = DateTime2), @p24='?' (DbType = DateTime2), @p25='?' (DbType = DateTime2), @p26='?' (Size = 4000), @p27='?' (Size = 4000), @p28='?' (DbType = Boolean), @p29='?' (Size = 4000), @p30='?' (Size = 4000), @p31='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [Customers] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, 0),
+(@p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, 1),
+(@p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, 2),
+(@p24, @p25, @p26, @p27, @p28, @p29, @p30, @p31, 3)) AS i ([CreatedAt], [DeletedAt], [Email], [FirstName], [IsDeleted], [LastName], [PhoneNumber], [UpdatedAt], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([CreatedAt], [DeletedAt], [Email], [FirstName], [IsDeleted], [LastName], [PhoneNumber], [UpdatedAt])
+VALUES (i.[CreatedAt], i.[DeletedAt], i.[Email], i.[FirstName], i.[IsDeleted], i.[LastName], i.[PhoneNumber], i.[UpdatedAt])
+OUTPUT INSERTED.[Id], i._Position; 
+2026-08-08 12:44:35.3693 | INFO | CustomerApi.Services.CustomerService | Bulk create: 4 created, 0 failed 
+2026-08-08 12:44:35.3854 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'CustomerApi.Common.ApiResponse`1[[CustomerApi.DTOs.BulkCreateResultDto, CustomerApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2026-08-08 12:44:35.4207 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action CustomerApi.Controllers.CustomerController.CreateMany (CustomerApi) in 2754.6648ms 
+2026-08-08 12:44:35.4207 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'CustomerApi.Controllers.CustomerController.CreateMany (CustomerApi)' 
+2026-08-08 12:44:35.4350 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 POST https://localhost:7286/api/Customer/bulk - 200 - application/json;+charset=utf-8 2867.0937ms 
+2026-08-08 12:46:34.6972 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 POST https://localhost:7286/api/Customer/bulk - application/json 461 
+2026-08-08 12:46:34.6972 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'CustomerApi.Controllers.CustomerController.CreateMany (CustomerApi)' 
+2026-08-08 12:46:34.6972 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "CreateMany", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateMany(CustomerApi.DTOs.BulkCreateCustomerDto) on controller CustomerApi.Controllers.CustomerController (CustomerApi). 
+2026-08-08 12:46:34.8368 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (17ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (DbType = DateTime2), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [Customers] USING (
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, 0),
+(@p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, 1)) AS i ([CreatedAt], [DeletedAt], [Email], [FirstName], [IsDeleted], [LastName], [PhoneNumber], [UpdatedAt], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([CreatedAt], [DeletedAt], [Email], [FirstName], [IsDeleted], [LastName], [PhoneNumber], [UpdatedAt])
+VALUES (i.[CreatedAt], i.[DeletedAt], i.[Email], i.[FirstName], i.[IsDeleted], i.[LastName], i.[PhoneNumber], i.[UpdatedAt])
+OUTPUT INSERTED.[Id], i._Position; 
+2026-08-08 12:46:34.8382 | INFO | CustomerApi.Services.CustomerService | Bulk create: 2 created, 2 failed 
+2026-08-08 12:46:34.8382 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'CustomerApi.Common.ApiResponse`1[[CustomerApi.DTOs.BulkCreateResultDto, CustomerApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2026-08-08 12:46:34.8382 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action CustomerApi.Controllers.CustomerController.CreateMany (CustomerApi) in 132.739ms 
+2026-08-08 12:46:34.8382 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'CustomerApi.Controllers.CustomerController.CreateMany (CustomerApi)' 
+2026-08-08 12:46:34.8382 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 POST https://localhost:7286/api/Customer/bulk - 200 - application/json;+charset=utf-8 146.2397ms 

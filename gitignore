@@ -1,0 +1,80 @@
+## ===== Build results =====
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+
+## ===== Visual Studio files =====
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+## ===== Visual Studio Code =====
+.vscode/
+
+## ===== NuGet =====
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+
+## ===== .NET Core / project-specific =====
+project.lock.json
+project.fragment.lock.json
+artifacts/
+**/Properties/launchSettings.json
+
+## ===== Rider / JetBrains =====
+.idea/
+*.sln.iml
+
+## ===== Logs (this project writes hourly log files via NLog) =====
+logs/
+*.log
+
+## ===== Local configuration & secrets — IMPORTANT for this project =====
+appsettings.Development.json
+appsettings.*.json
+!appsettings.json
+appsettings.Local.json
+secrets.json
+*.pfx
+*.key
+
+## ===== EF Core =====
+# Migrations SHOULD be committed — do not ignore the Migrations/ folder.
+# Only ignore local EF tool caches if any appear.
+
+## ===== Temp / backup files =====
+*.tmp
+*.Backup.tmp
+*.bak
+*~
+*.swp
+
+## ===== OS-generated files =====
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+## ===== Environment files =====
+.env
+.env.local
+
+## ===== Claude / AI tooling folders (seen in your directory) =====
+.claude/

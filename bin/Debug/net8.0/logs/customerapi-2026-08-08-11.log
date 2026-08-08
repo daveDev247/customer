@@ -1,0 +1,172 @@
+2026-08-08 11:10:43.4559 | INFO | Microsoft.Hosting.Lifetime | Now listening on: https://localhost:7286 
+2026-08-08 11:10:43.4978 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5045 
+2026-08-08 11:10:43.6097 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down. 
+2026-08-08 11:10:43.6097 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development 
+2026-08-08 11:10:43.6097 | INFO | Microsoft.Hosting.Lifetime | Content root path: C:\Users\HP\Desktop\Learn\CustomerApi 
+2026-08-08 11:10:45.0141 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/swagger - - - 
+2026-08-08 11:10:45.4562 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/swagger - 301 - - 480.1212ms 
+2026-08-08 11:10:45.4673 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/swagger/index.html - - - 
+2026-08-08 11:10:45.7783 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/swagger/swagger-ui-bundle.js - - - 
+2026-08-08 11:10:45.7783 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/swagger/swagger-ui.css - - - 
+2026-08-08 11:10:45.7970 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/swagger/swagger-ui-standalone-preset.js - - - 
+2026-08-08 11:10:45.8281 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/_vs/browserLink - - - 
+2026-08-08 11:10:45.8281 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/_framework/aspnetcore-browser-refresh.js - - - 
+2026-08-08 11:10:45.8436 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/swagger/index.html - 200 - text/html;charset=utf-8 376.3745ms 
+2026-08-08 11:10:45.8863 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/_framework/aspnetcore-browser-refresh.js - 200 14927 application/javascript;+charset=utf-8 56.9276ms 
+2026-08-08 11:10:45.9701 | INFO | Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware | Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A' 
+2026-08-08 11:10:45.9701 | INFO | Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware | Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A' 
+2026-08-08 11:10:45.9701 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 173.7165ms 
+2026-08-08 11:10:45.9701 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/swagger/swagger-ui.css - 200 152034 text/css 192.9887ms 
+2026-08-08 11:10:46.1724 | INFO | Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware | Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A' 
+2026-08-08 11:10:46.1724 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 395.2633ms 
+2026-08-08 11:10:46.2560 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 427.8711ms 
+2026-08-08 11:10:46.5666 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/swagger/v1/swagger.json - - - 
+2026-08-08 11:10:46.6610 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/swagger/favicon-32x32.png - - - 
+2026-08-08 11:10:46.6610 | INFO | Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware | Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A' 
+2026-08-08 11:10:46.6610 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/swagger/favicon-32x32.png - 200 628 image/png 1.8387ms 
+2026-08-08 11:10:46.6957 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 129.7307ms 
+2026-08-08 11:10:56.2754 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/api/Customer - - - 
+2026-08-08 11:10:56.2907 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'CustomerApi.Controllers.CustomerController.GetAll (CustomerApi)' 
+2026-08-08 11:10:56.3312 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "GetAll", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller CustomerApi.Controllers.CustomerController (CustomerApi). 
+2026-08-08 11:10:59.0189 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (108ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[DeletedAt], [c].[Email], [c].[FirstName], [c].[IsDeleted], [c].[LastName], [c].[PhoneNumber], [c].[UpdatedAt]
+FROM [Customers] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) 
+2026-08-08 11:10:59.1288 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'CustomerApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[CustomerApi.DTOs.CustomerResponseDto, CustomerApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2026-08-08 11:10:59.1628 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action CustomerApi.Controllers.CustomerController.GetAll (CustomerApi) in 2819.7728ms 
+2026-08-08 11:10:59.1628 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'CustomerApi.Controllers.CustomerController.GetAll (CustomerApi)' 
+2026-08-08 11:10:59.1797 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/api/Customer - 200 - application/json;+charset=utf-8 2905.1075ms 
+2026-08-08 11:11:45.1905 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 POST https://localhost:7286/api/Customer - application/json 109 
+2026-08-08 11:11:45.1905 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'CustomerApi.Controllers.CustomerController.Create (CustomerApi)' 
+2026-08-08 11:11:45.2190 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "Create", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(CustomerApi.DTOs.CreateCustomerDto) on controller CustomerApi.Controllers.CustomerController (CustomerApi). 
+2026-08-08 11:11:45.7043 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (71ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Customers] ([CreatedAt], [DeletedAt], [Email], [FirstName], [IsDeleted], [LastName], [PhoneNumber], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7); 
+2026-08-08 11:11:45.7456 | INFO | CustomerApi.Services.CustomerService | Customer created with Id 3 
+2026-08-08 11:11:45.7456 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing CreatedAtActionResult, writing value of type 'CustomerApi.Common.ApiResponse`1[[CustomerApi.DTOs.CustomerResponseDto, CustomerApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2026-08-08 11:11:45.7798 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action CustomerApi.Controllers.CustomerController.Create (CustomerApi) in 560.6095ms 
+2026-08-08 11:11:45.7798 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'CustomerApi.Controllers.CustomerController.Create (CustomerApi)' 
+2026-08-08 11:11:45.7798 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 POST https://localhost:7286/api/Customer - 201 - application/json;+charset=utf-8 590.0219ms 
+2026-08-08 11:14:51.5732 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 POST https://localhost:7286/api/Customer - application/json 117 
+2026-08-08 11:14:51.5732 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'CustomerApi.Controllers.CustomerController.Create (CustomerApi)' 
+2026-08-08 11:14:51.5732 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "Create", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(CustomerApi.DTOs.CreateCustomerDto) on controller CustomerApi.Controllers.CustomerController (CustomerApi). 
+2026-08-08 11:14:51.7000 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Customers] ([CreatedAt], [DeletedAt], [Email], [FirstName], [IsDeleted], [LastName], [PhoneNumber], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7); 
+2026-08-08 11:14:51.7000 | INFO | CustomerApi.Services.CustomerService | Customer created with Id 4 
+2026-08-08 11:14:51.7000 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing CreatedAtActionResult, writing value of type 'CustomerApi.Common.ApiResponse`1[[CustomerApi.DTOs.CustomerResponseDto, CustomerApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2026-08-08 11:14:51.7000 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action CustomerApi.Controllers.CustomerController.Create (CustomerApi) in 125.1271ms 
+2026-08-08 11:14:51.7000 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'CustomerApi.Controllers.CustomerController.Create (CustomerApi)' 
+2026-08-08 11:14:51.7000 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 POST https://localhost:7286/api/Customer - 201 - application/json;+charset=utf-8 129.9388ms 
+2026-08-08 11:15:16.0376 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 POST https://localhost:7286/api/Customer - application/json 117 
+2026-08-08 11:15:16.0376 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'CustomerApi.Controllers.CustomerController.Create (CustomerApi)' 
+2026-08-08 11:15:16.0376 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "Create", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(CustomerApi.DTOs.CreateCustomerDto) on controller CustomerApi.Controllers.CustomerController (CustomerApi). 
+2026-08-08 11:15:16.0538 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Customers] ([CreatedAt], [DeletedAt], [Email], [FirstName], [IsDeleted], [LastName], [PhoneNumber], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7); 
+2026-08-08 11:15:16.0538 | INFO | CustomerApi.Services.CustomerService | Customer created with Id 5 
+2026-08-08 11:15:16.0538 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing CreatedAtActionResult, writing value of type 'CustomerApi.Common.ApiResponse`1[[CustomerApi.DTOs.CustomerResponseDto, CustomerApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2026-08-08 11:15:16.0557 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action CustomerApi.Controllers.CustomerController.Create (CustomerApi) in 16.93ms 
+2026-08-08 11:15:16.0557 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'CustomerApi.Controllers.CustomerController.Create (CustomerApi)' 
+2026-08-08 11:15:16.0557 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 POST https://localhost:7286/api/Customer - 201 - application/json;+charset=utf-8 19.8536ms 
+2026-08-08 11:15:47.1212 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/api/Customer - - - 
+2026-08-08 11:15:47.1212 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'CustomerApi.Controllers.CustomerController.GetAll (CustomerApi)' 
+2026-08-08 11:15:47.1212 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "GetAll", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller CustomerApi.Controllers.CustomerController (CustomerApi). 
+2026-08-08 11:15:47.1461 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[DeletedAt], [c].[Email], [c].[FirstName], [c].[IsDeleted], [c].[LastName], [c].[PhoneNumber], [c].[UpdatedAt]
+FROM [Customers] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) 
+2026-08-08 11:15:47.1461 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'CustomerApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[CustomerApi.DTOs.CustomerResponseDto, CustomerApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2026-08-08 11:15:47.1461 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action CustomerApi.Controllers.CustomerController.GetAll (CustomerApi) in 17.1815ms 
+2026-08-08 11:15:47.1461 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'CustomerApi.Controllers.CustomerController.GetAll (CustomerApi)' 
+2026-08-08 11:15:47.1461 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/api/Customer - 200 - application/json;+charset=utf-8 26.8339ms 
+2026-08-08 11:36:16.7236 | INFO | Microsoft.Hosting.Lifetime | Now listening on: https://localhost:7286 
+2026-08-08 11:36:16.7602 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5045 
+2026-08-08 11:36:16.9122 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down. 
+2026-08-08 11:36:16.9122 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development 
+2026-08-08 11:36:16.9122 | INFO | Microsoft.Hosting.Lifetime | Content root path: C:\Users\HP\Desktop\Learn\CustomerApi 
+2026-08-08 11:36:17.9489 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/swagger/index.html - - - 
+2026-08-08 11:36:18.5119 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/_framework/aspnetcore-browser-refresh.js - - - 
+2026-08-08 11:36:18.5277 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/_vs/browserLink - - - 
+2026-08-08 11:36:18.5484 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/swagger/index.html - 200 - text/html;charset=utf-8 628.6347ms 
+2026-08-08 11:36:18.5484 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/_framework/aspnetcore-browser-refresh.js - 200 14927 application/javascript;+charset=utf-8 37.8027ms 
+2026-08-08 11:36:18.6431 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 115.5030ms 
+2026-08-08 11:36:19.0249 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/swagger/v1/swagger.json - - - 
+2026-08-08 11:36:19.1059 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 81.7874ms 
+2026-08-08 11:36:45.6455 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 DELETE https://localhost:7286/api/Customer/5 - - - 
+2026-08-08 11:36:45.6573 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'CustomerApi.Controllers.CustomerController.Delete (CustomerApi)' 
+2026-08-08 11:36:45.7063 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "Delete", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller CustomerApi.Controllers.CustomerController (CustomerApi). 
+2026-08-08 11:36:48.2169 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (80ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[DeletedAt], [c].[Email], [c].[FirstName], [c].[IsDeleted], [c].[LastName], [c].[PhoneNumber], [c].[UpdatedAt]
+FROM [Customers] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) AND [c].[Id] = @__p_0 
+2026-08-08 11:36:48.4807 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Customers]
+OUTPUT 1
+WHERE [Id] = @p0; 
+2026-08-08 11:36:48.4987 | INFO | CustomerApi.Services.CustomerService | Customer 5 deleted 
+2026-08-08 11:36:48.5157 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'CustomerApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2026-08-08 11:36:48.5333 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action CustomerApi.Controllers.CustomerController.Delete (CustomerApi) in 2818.2514ms 
+2026-08-08 11:36:48.5333 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'CustomerApi.Controllers.CustomerController.Delete (CustomerApi)' 
+2026-08-08 11:36:48.5521 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 DELETE https://localhost:7286/api/Customer/5 - 200 - application/json;+charset=utf-8 2907.6865ms 
+2026-08-08 11:37:12.4238 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/swagger - - - 
+2026-08-08 11:37:12.4383 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/swagger - 301 - - 18.0687ms 
+2026-08-08 11:37:12.4383 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/swagger/index.html - - - 
+2026-08-08 11:37:12.4640 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/swagger/index.html - 200 - text/html;charset=utf-8 13.7771ms 
+2026-08-08 11:37:12.4837 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/_framework/aspnetcore-browser-refresh.js - - - 
+2026-08-08 11:37:12.4837 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/_framework/aspnetcore-browser-refresh.js - 200 14927 application/javascript;+charset=utf-8 2.8779ms 
+2026-08-08 11:37:12.5061 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/_vs/browserLink - - - 
+2026-08-08 11:37:12.5762 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 70.7610ms 
+2026-08-08 11:37:12.7495 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/swagger/v1/swagger.json - - - 
+2026-08-08 11:37:12.7626 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 13.7828ms 
+2026-08-08 11:38:34.8140 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 DELETE https://localhost:7286/api/Customer/5 - - - 
+2026-08-08 11:38:34.8140 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'CustomerApi.Controllers.CustomerController.Delete (CustomerApi)' 
+2026-08-08 11:38:34.8529 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "Delete", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(Int32) on controller CustomerApi.Controllers.CustomerController (CustomerApi). 
+2026-08-08 11:38:34.9028 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[DeletedAt], [c].[Email], [c].[FirstName], [c].[IsDeleted], [c].[LastName], [c].[PhoneNumber], [c].[UpdatedAt]
+FROM [Customers] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) AND [c].[Id] = @__p_0 
+2026-08-08 11:38:34.9028 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing NotFoundObjectResult, writing value of type 'CustomerApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2026-08-08 11:38:34.9028 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action CustomerApi.Controllers.CustomerController.Delete (CustomerApi) in 53.3273ms 
+2026-08-08 11:38:34.9028 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'CustomerApi.Controllers.CustomerController.Delete (CustomerApi)' 
+2026-08-08 11:38:34.9028 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 DELETE https://localhost:7286/api/Customer/5 - 404 - application/json;+charset=utf-8 94.2774ms 
+2026-08-08 11:38:55.5887 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 PATCH https://localhost:7286/api/Customer/4/soft-delete - - - 
+2026-08-08 11:38:55.5887 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'CustomerApi.Controllers.CustomerController.SoftDelete (CustomerApi)' 
+2026-08-08 11:38:55.6136 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "SoftDelete", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SoftDelete(Int32) on controller CustomerApi.Controllers.CustomerController (CustomerApi). 
+2026-08-08 11:38:55.7364 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[CreatedAt], [c].[DeletedAt], [c].[Email], [c].[FirstName], [c].[IsDeleted], [c].[LastName], [c].[PhoneNumber], [c].[UpdatedAt]
+FROM [Customers] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) AND [c].[Id] = @__p_0 
+2026-08-08 11:38:55.7664 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (14ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Customers] SET [DeletedAt] = @p0, [IsDeleted] = @p1
+OUTPUT 1
+WHERE [Id] = @p2; 
+2026-08-08 11:38:55.7664 | INFO | CustomerApi.Services.CustomerService | Customer 4 soft-deleted 
+2026-08-08 11:38:55.7664 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'CustomerApi.Common.ApiResponse`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2026-08-08 11:38:55.7664 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action CustomerApi.Controllers.CustomerController.SoftDelete (CustomerApi) in 156.3248ms 
+2026-08-08 11:38:55.7664 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'CustomerApi.Controllers.CustomerController.SoftDelete (CustomerApi)' 
+2026-08-08 11:38:55.7664 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 PATCH https://localhost:7286/api/Customer/4/soft-delete - 200 - application/json;+charset=utf-8 182.8476ms 
+2026-08-08 11:39:30.5110 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7286/api/Customer - - - 
+2026-08-08 11:39:30.5110 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'CustomerApi.Controllers.CustomerController.GetAll (CustomerApi)' 
+2026-08-08 11:39:30.5330 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "GetAll", controller = "Customer"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller CustomerApi.Controllers.CustomerController (CustomerApi). 
+2026-08-08 11:39:30.5655 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[CreatedAt], [c].[DeletedAt], [c].[Email], [c].[FirstName], [c].[IsDeleted], [c].[LastName], [c].[PhoneNumber], [c].[UpdatedAt]
+FROM [Customers] AS [c]
+WHERE [c].[IsDeleted] = CAST(0 AS bit) 
+2026-08-08 11:39:30.5962 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing OkObjectResult, writing value of type 'CustomerApi.Common.ApiResponse`1[[System.Collections.Generic.List`1[[CustomerApi.DTOs.CustomerResponseDto, CustomerApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. 
+2026-08-08 11:39:30.6066 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action CustomerApi.Controllers.CustomerController.GetAll (CustomerApi) in 73.443ms 
+2026-08-08 11:39:30.6066 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'CustomerApi.Controllers.CustomerController.GetAll (CustomerApi)' 
+2026-08-08 11:39:30.6066 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7286/api/Customer - 200 - application/json;+charset=utf-8 98.9438ms 

@@ -1,0 +1,25 @@
+2026-08-08 10:43:32.3368 | INFO | Microsoft.Hosting.Lifetime | Now listening on: https://localhost:7286 
+2026-08-08 10:43:32.3789 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5045 
+2026-08-08 10:43:32.5418 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down. 
+2026-08-08 10:43:32.5418 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development 
+2026-08-08 10:43:32.5418 | INFO | Microsoft.Hosting.Lifetime | Content root path: C:\Users\HP\Desktop\Learn\CustomerApi 
+2026-08-08 10:45:29.3396 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (38ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 
+2026-08-08 10:45:29.4325 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (29ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+2026-08-08 10:45:29.4325 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 
+2026-08-08 10:45:29.4325 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+2026-08-08 10:45:29.5218 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (53ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+2026-08-08 10:45:29.5472 | INFO | Microsoft.EntityFrameworkCore.Migrations | Applying migration '20260808094423_AddSoftDeleteFields'. 
+2026-08-08 10:45:29.6496 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (49ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [Customers] ADD [DeletedAt] datetime2 NULL; 
+2026-08-08 10:45:29.7003 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (50ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [Customers] ADD [IsDeleted] bit NOT NULL DEFAULT CAST(0 AS bit); 
+2026-08-08 10:45:29.7003 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20260808094423_AddSoftDeleteFields', N'8.0.29'); 

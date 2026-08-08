@@ -1,0 +1,61 @@
+
+**Step 1 — Project setup & folder structure**
+`dotnet new webapi -n CustomerApi`. Folders: `Controllers/`, `Services/Interfaces/`, `Services/`, `DTOs/Customer/`, `Models/`, `Data/`, `Common/`.
+
+
+
+**Step 2 — Model + DbContext + connection string**
+Write `Customer.cs`. Install:
+```
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+dotnet add package Microsoft.EntityFrameworkCore.Design
+```
+Write `AppDbContext` with `DbSet<Customer>`, connection string in `appsettings.json`, register via `AddDbContext`.
+
+
+
+**Step 3 — EF Core migration**
+```
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+```
+
+
+
+**Step 4 — DTOs**
+`CreateCustomerDto`, `UpdateCustomerDto`, `CustomerResponseDto` — plain classes, no validation attributes yet.
+
+
+
+**Step 5 — Uniform response object**
+`ApiResponse<T>` — `Success`, `Message`, `Data`, `Errors`.
+
+
+
+**Step 6 — Service interface + implementation, with manual DTO↔Model mapping and try-catch**
+`ICustomerService` → `CustomerService`. Manual mapping code inside each method, and each method wrapped in try-catch — catch specific exceptions where it makes sense (e.g., DB errors), log the exception, and either rethrow or return a sentinel the controller can interpret. Worth explicitly discussing with the junior dev *where* to catch — service layer catches for logging context, but the controller is where the HTTP-shaped response actually gets decided.
+
+
+
+**Step 7 — Controller with try-catch**
+Inject `ICustomerService`, wrap each action in try-catch, return `ApiResponse<T>` with proper status codes on success, and a 500 `ApiResponse` on caught exceptions. This is the layer that's doing the job global middleware would otherwise do — good to be explicit with the junior dev that this is temporary/manual until Step 11 in the full roadmap.
+
+
+
+**Step 8 — Validation (ModelState + Regex)**
+Data Annotations including `[RegularExpression]` for explicit pattern control. Check `ModelState.IsValid` manually in the controller.
+
+
+
+**Step 9 — NLog (hourly file rotation)**
+```
+dotnet add package NLog.Web.AspNetCore
+```
+`nlog.config` with `archiveEvery="Hour"`. Wire in via `UseNLog()`, inject `ILogger<T>` — this is what the catch blocks will actually log to.
+
+
+
+**Step 10 — Swagger**
+Scaffolded by default or `dotnet add package Swashbuckle.AspNetCore`. Test full CRUD flow, including forcing an exception (e.g., invalid connection string temporarily) to watch the try-catch and logging actually fire.
+
