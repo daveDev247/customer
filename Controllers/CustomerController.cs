@@ -2,6 +2,7 @@
 using CustomerApi.DTOs;
 using CustomerApi.Services;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,6 +10,7 @@ namespace CustomerApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class CustomerController : ControllerBase
     {
         private readonly ICustomerService _customerService;

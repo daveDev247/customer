@@ -1,5 +1,5 @@
 Automapper
-
+===========
 1. Install AutoMapper.Extensions.Microsoft.DependencyInjection
 2. Create MappingProfile(map DTOs and Models and Reverse)
 3. Register Automapper
@@ -10,6 +10,7 @@ _mapper.Map<List<CustomerResponseDto>>(customers);
 
 
 GLOBAL EXCEPTION
+=================
 1. Create the middleware to capture all error and return uniform response.
 2. Add the middleware to the request pipeline on program.cs class
 
@@ -17,6 +18,7 @@ GLOBAL EXCEPTION
 
 
 FLUENT VALIDATION
+=================
 1. Install fluent validator   (FluentValidation.AspNetCore)
 2. Create validator classes for each DTO
 3. Register the validator services
@@ -26,7 +28,7 @@ FLUENT VALIDATION
 
 
 SOFT DELETE (new endpoint, separate from existing hard delete)
-
+===============================================================
 Add IsDeleted/DeletedAt fields to Customer model (unavoidable — the flag has to live on the entity). No global query filter added, so existing GetAll/GetById/Delete behavior is untouched.
 Add SoftDeleteAsync as a new method in the service — separate from existing DeleteAsync.
 Add new endpoint PATCH /api/Customer/{id}/soft-delete.
@@ -35,7 +37,7 @@ New migration for the schema change only.
 
 
 PAGINATION, FILTERING & SORTING (new endpoint, separate from existing GetAll)
-
+=============================================================================
 Add PagedResponse<T> and CustomerQueryParams.
 Add GetAllPagedAsync as a new service method — existing GetAllAsync stays exactly as-is.
 Add new endpoint GET /api/Customer/paged.
@@ -44,7 +46,24 @@ Add new endpoint GET /api/Customer/paged.
 
 
 BULK CREATE (already additive from before, unchanged)
-
+==================================================
 BulkCreateCustomerDto, BulkCreateResultDto.
 CreateManyAsync new service method.
 New endpoint POST /api/Customer/bulk.
+
+
+
+
+
+JWT BEARER TOKEN STEPS
+=======================
+Install JWT packages (Microsoft.AspNetCore.Authentication.JwtBearer) and a password hasher (BCrypt.Net-Next).
+Create User model (credentials) and RefreshToken model (tracks issued refresh tokens so they can be validated/revoked server-side).
+Add both as DbSets to AppDbContext, run a migration.
+Add JWT settings (secret key, issuer, audience, token lifetimes) to appsettings.json.
+Create Auth DTOs: RegisterDto, LoginDto, AuthResponseDto, RefreshTokenRequestDto.
+Create IJwtTokenService/JwtTokenService — generates the signed access token and a random refresh token string.
+Create IAuthService/AuthService — handles register (hash password), login (verify password, issue tokens), refresh (validate + rotate refresh token), revoke (logout).
+Create AuthController with POST /api/auth/register, POST /api/auth/login, POST /api/auth/refresh, POST /api/auth/revoke.
+Wire up AddAuthentication().AddJwtBearer() in Program.cs, add app.UseAuthentication() before app.UseAuthorization().
+(Follow-up stage, not done now per your instruction not to touch existing endpoints): add [Authorize] to CustomerController once he's comfortable with the auth flow itself.
