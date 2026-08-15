@@ -67,6 +67,9 @@ Create IAuthService/AuthService — handles register (hash password), login (ver
 Create AuthController with POST /api/auth/register, POST /api/auth/login, POST /api/auth/refresh, POST /api/auth/revoke.
 Wire up AddAuthentication().AddJwtBearer() in Program.cs, add app.UseAuthentication() before app.UseAuthorization().
 (Follow-up stage, not done now per your instruction not to touch existing endpoints): add [Authorize] to CustomerController once he's comfortable with the auth flow itself.
+Use this Powershell command to generate JWT secret key:    [Convert]::ToBase64String((1..64 | ForEach-Object { Get-Random -Minimum 0 -Maximum 255 }))
+
+
 
 
 
