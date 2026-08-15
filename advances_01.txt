@@ -67,3 +67,24 @@ Create IAuthService/AuthService — handles register (hash password), login (ver
 Create AuthController with POST /api/auth/register, POST /api/auth/login, POST /api/auth/refresh, POST /api/auth/revoke.
 Wire up AddAuthentication().AddJwtBearer() in Program.cs, add app.UseAuthentication() before app.UseAuthorization().
 (Follow-up stage, not done now per your instruction not to touch existing endpoints): add [Authorize] to CustomerController once he's comfortable with the auth flow itself.
+
+
+
+NEXT
+====
+
+Logging,
+External API call
+AuditLogs Middleware
+Other ORM like Dapper, Stored Procedures
+Background Jobs (Hangfire, Quartz, Hosted Services) with basic authentication and authorization
+Caching (MemoryCache, Redis)
+Rate Limiting (AspNetCoreRateLimit)
+
+
+
+Revise C# concepts
+==================
+Class structure, Inheritance, Polymorphism, Abstraction, Encapsulation
+Methods, Properties, Fields, Constructors, Destructors
+Data types, Variables, Constants, Enums
